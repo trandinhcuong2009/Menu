@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEB ÔN THI 2026 | Menu siêu đẹp</title>
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Particles Background */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+            opacity: 0.3;
+            filter: blur(3px);
+            animation: floatParticle 10s infinite ease-in-out;
+        }
+
+        @keyframes floatParticle {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(30px, -50px) rotate(120deg); }
+            66% { transform: translate(-20px, 30px) rotate(240deg); }
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Header với hiệu ứng 3D */
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .header h1 {
+            font-size: 5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ff6b6b, #4ecdc4, #ffd93d, #6c5ce7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 300% 300%;
+            animation: gradientMove 8s ease infinite;
+            text-shadow: 0 0 30px rgba(255, 107, 107, 0.5);
+            letter-spacing: -2px;
+            margin-bottom: 20px;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: floatTitle 3s ease infinite;
+        }
+
+        @keyframes gradientMove {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        @keyframes floatTitle {
+            0%, 100% { transform: translateY(0) rotateX(0deg); }
+            50% { transform: translateY(-20px) rotateX(5deg); }
+        }
+
+        .header h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, #ff6b6b, #4ecdc4, transparent);
+            border-radius: 2px;
+        }
+
+        .header p {
+            font-size: 1.3rem;
+            color: rgba(255,255,255,0.8);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+            backdrop-filter: blur(10px);
+            padding: 15px 30px;
+            border-radius: 50px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            display: inline-block;
+            animation: pulseGlow 2s ease infinite;
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 20px rgba(78, 205, 196, 0.3); }
+            50% { box-shadow: 0 0 40px rgba(255, 107, 107, 0.5); }
+        }
+
+        /* Grid menu */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            padding: 20px;
+            perspective: 2000px;
+        }
+
+        /* Card design siêu đỉnh */
+        .subject-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 40px;
+            padding: 40px 25px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 
+                0 20px 40px rgba(0,0,0,0.4),
+                inset 0 0 0 1px rgba(255,255,255,0.1);
+            transform-style: preserve-3d;
+            animation: cardRise 1s ease backwards;
+            animation-delay: calc(var(--i) * 0.2s);
+        }
+
+        @keyframes cardRise {
+            from {
+                opacity: 0;
+                transform: translateY(100px) rotateX(20deg);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) rotateX(0);
+            }
+        }
+
+        .subject-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.7s ease;
+        }
+
+        .subject-card:hover::before {
+            left: 100%;
+        }
+
+        .subject-card:hover {
+            transform: translateY(-20px) rotateX(5deg) rotateY(5deg) scale(1.05);
+            box-shadow: 
+                0 40px 80px rgba(0,0,0,0.6),
+                0 0 0 2px rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.1);
+        }
+
+        .subject-card:hover .icon-wrapper {
+            transform: scale(1.1) rotate(10deg);
+        }
+
+        .subject-card:hover .card-shine {
+            opacity: 1;
+        }
+
+        .card-shine {
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            pointer-events: none;
+            mix-blend-mode: overlay;
+        }
+
+        .icon-wrapper {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 25px;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+            position: relative;
+            z-index: 2;
+        }
+
+        .icon-wrapper i {
+            font-size: 4rem;
+            color: white;
+            filter: drop-shadow(0 5px 10px rgba(0,0,0,0.3));
+        }
+
+        /* Màu sắc riêng cho từng môn */
+        .subject-card:nth-child(1) .icon-wrapper { background: linear-gradient(135deg, #2ecc71, #27ae60); }
+        .subject-card:nth-child(2) .icon-wrapper { background: linear-gradient(135deg, #e67e22, #d35400); }
+        .subject-card:nth-child(3) .icon-wrapper { background: linear-gradient(135deg, #f1c40f, #f39c12); }
+        .subject-card:nth-child(4) .icon-wrapper { background: linear-gradient(135deg, #3498db, #2980b9); }
+        .subject-card:nth-child(5) .icon-wrapper { background: linear-gradient(135deg, #e74c3c, #c0392b); }
+
+        .subject-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: white;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            position: relative;
+            z-index: 2;
+        }
+
+        .subject-description {
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 25px;
+            line-height: 1.6;
+            font-size: 1rem;
+            padding: 0 10px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            flex: 1;
+        }
+
+        .btn-learn {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .btn-report {
+            background: rgba(255, 107, 107, 0.2);
+            color: #ff6b6b;
+            border: 1px solid #ff6b6b;
+            backdrop-filter: blur(5px);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+
+        .btn-learn:hover {
+            background: linear-gradient(135deg, #764ba2, #667eea);
+        }
+
+        .btn-report:hover {
+            background: #ff6b6b;
+            color: white;
+        }
+
+        .btn i {
+            font-size: 1rem;
+        }
+
+        /* Nút hỗ trợ cố định */
+        .support-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+        }
+
+        .support-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 60px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.5);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .support-link:hover {
+            transform: scale(1.1) rotate(2deg);
+            box-shadow: 0 20px 40px rgba(255, 107, 107, 0.8);
+        }
+
+        .support-link i {
+            font-size: 1.5rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .menu-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 900px) {
+            .menu-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .header h1 {
+                font-size: 3.5rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+            .header h1 {
+                font-size: 2.5rem;
+            }
+            .btn-group {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Particles Background -->
+    <div class="particles" id="particles"></div>
+
+    <div class="container">
+        <div class="header">
+            <h1>WEB ÔN THI 2026</h1>
+            <p><i class="fas fa-star" style="color: #ffd93d;"></i> Học tập thông minh - Hiệu quả vượt trội <i class="fas fa-star" style="color: #ffd93d;"></i></p>
+        </div>
+
+        <div class="menu-grid">
+            <!-- Môn Sinh học -->
+            <div class="subject-card" style="--i:1">
+                <div class="card-shine"></div>
+                <div class="icon-wrapper">
+                    <i class="fas fa-dna"></i>
+                </div>
+                <h2 class="subject-title">Sinh học</h2>
+                <p class="subject-description">
+                    Khám phá thế giới sống, tế bào, di truyền và các hệ sinh thái
+                </p>
+                <div class="btn-group">
+                    <a href="https://trandinhcuong2009.github.io/Sinhlord/" target="_blank" class="btn btn-learn">
+                        <i class="fas fa-play"></i> Học ngay
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=61580345093167" target="_blank" class="btn btn-report">
+                        <i class="fas fa-bug"></i> Báo lỗi
+                    </a>
+                </div>
+            </div>
+
+            <!-- Môn Lịch sử -->
+            <div class="subject-card" style="--i:2">
+                <div class="card-shine"></div>
+                <div class="icon-wrapper">
+                    <i class="fas fa-landmark"></i>
+                </div>
+                <h2 class="subject-title">Lịch sử</h2>
+                <p class="subject-description">
+                    Hành trình qua các thời kỳ, sự kiện và nhân vật lịch sử
+                </p>
+                <div class="btn-group">
+                    <a href="https://trandinhcuong2009.github.io/Lichsu/" target="_blank" class="btn btn-learn">
+                        <i class="fas fa-play"></i> Học ngay
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=61580345093167" target="_blank" class="btn btn-report">
+                        <i class="fas fa-bug"></i> Báo lỗi
+                    </a>
+                </div>
+            </div>
+
+            <!-- Môn GDKT -->
+            <div class="subject-card" style="--i:3">
+                <div class="card-shine"></div>
+                <div class="icon-wrapper">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h2 class="subject-title">GDKT</h2>
+                <p class="subject-description">
+                    Giáo dục kinh tế - Thị trường, tài chính và quản lý
+                </p>
+                <div class="btn-group">
+                    <a href="https://trandinhcuong2009.github.io/Gdkt/" target="_blank" class="btn btn-learn">
+                        <i class="fas fa-play"></i> Học ngay
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=61580345093167" target="_blank" class="btn btn-report">
+                        <i class="fas fa-bug"></i> Báo lỗi
+                    </a>
+                </div>
+            </div>
+
+            <!-- Môn Địa lý -->
+            <div class="subject-card" style="--i:4">
+                <div class="card-shine"></div>
+                <div class="icon-wrapper">
+                    <i class="fas fa-globe-asia"></i>
+                </div>
+                <h2 class="subject-title">Địa lý</h2>
+                <p class="subject-description">
+                    Khám phá các vùng đất, khí hậu và hiện tượng địa lý
+                </p>
+                <div class="btn-group">
+                    <a href="https://trandinhcuong2009.github.io/-alys/" target="_blank" class="btn btn-learn">
+                        <i class="fas fa-play"></i> Học ngay
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=61580345093167" target="_blank" class="btn btn-report">
+                        <i class="fas fa-bug"></i> Báo lỗi
+                    </a>
+                </div>
+            </div>
+
+            <!-- Môn Tiếng Anh (thêm mẫu) -->
+            <div class="subject-card" style="--i:5">
+                <div class="card-shine"></div>
+                <div class="icon-wrapper">
+                    <i class="fas fa-language"></i>
+                </div>
+                <h2 class="subject-title">Tiếng Anh</h2>
+                <p class="subject-description">
+                    Nâng cao kỹ năng nghe, nói, đọc, viết tiếng Anh
+                </p>
+                <div class="btn-group">
+                    <a href="#" class="btn btn-learn" onclick="alert('Đang phát triển...')">
+                        <i class="fas fa-play"></i> Học ngay
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=61580345093167" target="_blank" class="btn btn-report">
+                        <i class="fas fa-bug"></i> Báo lỗi
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Nút hỗ trợ cố định -->
+        <div class="support-btn">
+            <a href="https://www.facebook.com/profile.php?id=61580345093167" target="_blank" class="support-link">
+                <i class="fab fa-facebook-messenger"></i>
+                <span>Hỗ trợ / Báo lỗi</span>
+                <i class="fas fa-chevron-right"></i>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Tạo particles background
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 50;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                
+                // Kích thước ngẫu nhiên
+                const size = Math.random() * 10 + 5;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                
+                // Vị trí ngẫu nhiên
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                
+                // Animation delay ngẫu nhiên
+                particle.style.animationDelay = `${Math.random() * 5}s`;
+                particle.style.animationDuration = `${Math.random() * 10 + 10}s`;
+                
+                // Màu sắc ngẫu nhiên
+                const hue = Math.random() * 60 + 300; // Tông tím/hồng
+                particle.style.background = `linear-gradient(135deg, hsl(${hue}, 70%, 60%), hsl(${hue + 60}, 70%, 60%))`;
+                
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Hiệu ứng khi click vào card
+        document.querySelectorAll('.subject-card').forEach(card => {
+            card.addEventListener('click', function(e) {
+                // Nếu click vào button thì không xử lý
+                if (e.target.tagName === 'A' || e.target.closest('a')) {
+                    return;
+                }
+                
+                // Hiệu ứng nhấp nháy
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 200);
+                
+                // Lấy title để hiển thị (tùy chọn)
+                const title = this.querySelector('.subject-title').textContent;
+                console.log(`Đã chọn môn: ${title}`);
+            });
+        });
+
+        // Khởi tạo particles
+        createParticles();
+
+        // Animation cho header
+        anime({
+            targets: '.header h1',
+            scale: [1, 1.05, 1],
+            rotateZ: [0, 2, -2, 0],
+            duration: 3000,
+            loop: true,
+            easing: 'easeInOutQuad'
+        });
+
+        // Hiệu ứng ripple cho nút
+        document.querySelectorAll('.btn').forEach(btn => {
+            btn.addEventListener('mouseenter', function(e) {
+                const ripple = document.createElement('span');
+                ripple.style.position = 'absolute';
+                ripple.style.top = '50%';
+                ripple.style.left = '50%';
+                ripple.style.transform = 'translate(-50%, -50%)';
+                ripple.style.width = '0';
+                ripple.style.height = '0';
+                ripple.style.borderRadius = '50%';
+                ripple.style.background = 'rgba(255,255,255,0.3)';
+                ripple.style.transition = 'all 0.5s ease';
+                ripple.style.pointerEvents = 'none';
+                this.style.position = 'relative';
+                this.appendChild(ripple);
+                
+                setTimeout(() => {
+                    ripple.style.width = '200px';
+                    ripple.style.height = '200px';
+                    ripple.style.opacity = '0';
+                }, 10);
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 500);
+            });
+        });
+    </script>
+</body>
+</html>
